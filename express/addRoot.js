@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 
 // app.us is using for middleware.
-app.use(express.static("./public"))
+app.use(express.static("../public"))
 
 app.get("/", (req, res) => {
     // res.sendFile(path.join(__dirname, "./bootstrap5/index.html"));

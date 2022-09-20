@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 
-const data = require("./data");
+const data = require("../data");
 
 const app = express();
 

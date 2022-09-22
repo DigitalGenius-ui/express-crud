@@ -1,33 +1,21 @@
 import express from "express";
+import cors from "cors";
+import product from "./Routes/products.js";
+import auth from "./Routes/auth.js";
 
 const app = express();
 
-// Global middleware. It will be printed after all other routes.
-app.use([logger, auth]);
+// this shows all assets in node file
+app.use(express.static("./bootstrap5"));
+//this show req.body text;
+app.use(express.urlencoded({extended : false}))
+//make possible to show the req.body text in post request;
+app.use(express.json());
+app.use(cors());
 
-app.get("/", (req, res) => {
-    console.log(req.admin)
-    console.log("Home Page")
-    res.send("This is the homepage")
-});
+//router
+app.use("/api/products", product);
+app.use("/login", auth);
 
-app.get("/user", (req, res) => {
-    res.send("This is the User page")
-});
-
-function logger (req, res, next){
-    console.log("log");
-    next();
-}
-
-function auth(req, res, next){
-    if(req.query.admin === "milad"){
-        req.admin = {name:'milad', id:1};
-        // the next is working similar to return.
-        next();
-        return;
-    }
-    res.send("User is not Authenticated");
-}
 
 app.listen(5000);

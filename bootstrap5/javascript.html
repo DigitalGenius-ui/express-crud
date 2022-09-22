@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="./css/index.css">
     <script src="./js/index.js" defer></script>
     <title>Bootstrap 5</title>
@@ -13,18 +14,20 @@
         <nav>
             <div class="logo">HTTP</div>
             <ul>
-                <li><a href="#">From</a></li>
+                <li><a href="index.html">From</a></li>
                 <li><a href="javascript.html">Javascript</a></li>
             </ul>
         </nav>
     </div>
-    <form action="/login" method="post" class="form">
+    <form class="form">
         <h1>Write your name</h1>
         <div>
             <label>Name</label>
             <input type="text" placeholder="Name..." class="name" name="name">
-            <button type="submit">Submit</button>
+            <span class="errorMsg"></span>
+            <button type="submit" class="btn">Submit</button>
         </div>
     </form>
+    <div class="names"></div>
 </body>
 </html>

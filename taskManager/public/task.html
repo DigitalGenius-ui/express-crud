@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/edit.js" defer></script>
+    <title>Task</title>
+</head>
+<body>
+    <div class="container">
+        <form class="editForm">
+            <h1>Edit Task</h1>
+            <div class="details">
+                <div>
+                    <label>Task Id</label>
+                    <p class="editId"></p>
+                </div>
+                <div>
+                    <label>Name</label>
+                    <input type="text" placeholder="text..." class="editInput">
+                </div>
+                <div>
+                    <label>Completed</label>
+                    <div class="complete">
+                        <input type="checkbox" class="completed" name="complete">
+                    </div>
+                </div>
+                <button>Update</button>
+            </div>
+            <p class="msg">Success, Task edited</p>
+        </form>
+        <a href="/">back home</a>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+</html>
